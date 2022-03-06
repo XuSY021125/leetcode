@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main()
+{
+    int i, j, target;
+    int nums[4] = {};
+    printf("请输入target值;");
+    scanf_s("%d", &target);
+    printf("请输入给定的数组;");
+    for (i = 0;i < 4;i++)
+    {
+        scanf_s("%d", &nums[i]);
+    }
+    for (i = 0;i < 4;i++)
+    {
+        for (j = i;j < 4;j++)
+        {
+            if (target == nums[i] + nums[j])
+            {
+                printf("[%d,%d]", i, j);
+            }
+        }
+    }
+    return 0;
+}
