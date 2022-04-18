@@ -1,18 +1,17 @@
-#include<stdio.h>
-int main()
-{
-    int num;
-    printf("ÇëÊäÈënumµÄÖµ;");
-    scanf_s("%d", &num);
-    int min = 1, max = num, mid;
-    while (min <= max) {
-        mid = (min + min) / 2;
-        if (num / mid == mid && num % mid == 0) 
-            return true;
-        else if (num / mid < mid)
-            max = mid - 1;
-        else
-            min = mid + 1;
+int mySqrt(int x){
+    {
+        if(x == 1)
+            return 1;
+        int min = 0;
+        int max = x;
+        while(max-min>1)
+        {
+            int m = (max+min)/2;
+            if(x/m<m)
+                max = m;
+            else
+                min = m;
+        }
+        return min;
     }
-    return false;
 }
