@@ -1,0 +1,10 @@
+int findLengthOfLCIS(int* nums, int numsSize){
+ int ans=1,index=0,i;
+    for(i=1;i<numsSize;i++)
+    {
+        if(nums[i]<=nums[i-1])//如果发现了不递增的部分,前面的就全都没用了,因为前面已经有不递增的部分了,要从i重新开始计算了
+            index=i;
+        ans=ans>(i-index+1)?ans:(i-index+1);//i-index+1即为以nums[i]结尾的递增序列的长度
+    }
+    return ans;
+}
